@@ -1,9 +1,9 @@
 <?php
 
-$db_host = "smallpro2.cge3wy8cu4rk.us-east-2.rds.amazonaws.com";
-$db_user = "root";
-$db_pass = "1234567890";
-$db_name = "dbsmall";
+$db_host = getenv('DB_HOST');
+$db_user = getenv('DB_USER');
+$db_pass = getenv('DB_PASS');
+$db_name = 'dbsosmed';
 
 try {    
     //create PDO connection 
