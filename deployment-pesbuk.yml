@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-pesbuk
+spec:
+  selector:
+    matchLabels:
+      run: php-pesbuk
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: php-pesbuk
+    spec:
+      containers:
+      - name: php-pesbuk
+        image: elqahtani/php-pesbuk
+        ports:
+          - containerPort: 80
+        env:
+        - name: DB_HOST
+          value: "rdsaws"
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: p-secret-fb
+              key: DB_USER
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+              name: p-secret-fb
+              key: DB_PASS
