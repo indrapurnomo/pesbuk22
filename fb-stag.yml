@@ -41,14 +41,14 @@ spec:
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
-                  name: mysecret
+                  name: mysecret2
                   key: username
             - name: DB_PASS
               valueFrom:
                 secretKeyRef:
-                  name: mysecret
+                  name: mysecret2
                   key: password
-            - name: dbname
+            - name: DB_NAME
               value:"dbsosmed2"
 ---
 
