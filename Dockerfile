@@ -8,7 +8,7 @@ FROM php:7.2-fpm
 
 MAINTAINER 
 
-WORKDIR /var/www/html
+WORKDIR /usr/share/nginx/html/
 
 RUN apt-get update -y \
     && apt-get install -y nginx \
