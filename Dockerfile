@@ -6,8 +6,6 @@
 
 FROM php:7.2-fpm
 
-MAINTAINER 
-
 WORKDIR /usr/share/nginx/html/
 
 RUN apt-get update -y \
