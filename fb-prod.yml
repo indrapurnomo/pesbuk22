@@ -49,10 +49,7 @@ spec:
                   name: mysecret
                   key: password
             - name: dbname
-              valueFrom:
-                secretKeyRef:
-                  name: mysecret
-                  key: dbname
+              value:"dbsosmed"
 ---
 
 apiVersion: extensions/v1beta1
