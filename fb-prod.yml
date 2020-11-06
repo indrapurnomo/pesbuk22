@@ -48,7 +48,7 @@ spec:
                 secretKeyRef:
                   name: mysecret
                   key: password
-            - name: dbname
+            - name: DB_NAME
               value:"dbsosmed"
 ---
 
