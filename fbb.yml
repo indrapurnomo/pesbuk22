@@ -35,7 +35,10 @@ spec:
         - containerPort: 80
         env:
             - name: DB_HOST
-              value:"production.cge3wy8cu4rk.us-east-2.rds.amazonaws.com"
+              valueFrom:
+                secretKeyRef:
+                  name: mysecret
+                  key: host
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
@@ -47,7 +50,10 @@ spec:
                   name: mysecret
                   key: password
             - name: DB_NAME
-              value:"dbsosmed2"
+              valueFrom:
+                secretKeyRef:
+                  name: mysecret
+                  key: dbname
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -57,7 +63,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: pesbuktrial.indraku.online
+  - host: pesbuk.indraku.online
     http:
       paths:
       #- path: /
