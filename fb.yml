@@ -37,7 +37,7 @@ spec:
         - containerPort: 80
         env:
             - name: DB_HOST
-              value:""
+              value:"production.cge3wy8cu4rk.us-east-2.rds.amazonaws.com"
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
@@ -49,7 +49,7 @@ spec:
                   name: mysecret
                   key: password
             - name: DB_NAME
-              value:"dbsosmed3"
+              value:"dbsosmed2"
 ---
 
 apiVersion: extensions/v1beta1
