@@ -30,15 +30,12 @@ spec:
     spec:
       containers:
       - name: php-pesbuk
-        image: rizaleko/pesbuk
+        image: indradock/php-pesbuk:2.0
         ports:
         - containerPort: 80
         env:
             - name: DB_HOST
-              valueFrom:
-                secretKeyRef:
-                  name: p-secret-fb
-                  key: host
+              value:"production.cge3wy8cu4rk.us-east-2.rds.amazonaws.com"
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
@@ -50,10 +47,7 @@ spec:
                   name: p-secret-fb
                   key: password
             - name: DB_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: p-secret-fb
-                  key: dbname
+              value:"dbsosmed2"
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -63,7 +57,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: pesbuk.ridjal.com
+  - host: pesbuktrial.indraku.online
     http:
       paths:
       #- path: /
