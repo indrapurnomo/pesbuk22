@@ -51,7 +51,6 @@ spec:
             - name: DB_NAME
               value:"dbsosmed2"
 ---
-
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
