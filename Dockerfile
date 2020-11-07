@@ -4,7 +4,7 @@
 
 #WORKDIR /var/www/html/
 
-FROM indradock/pesbuk 
+FROM indradock/pesbuk:1.0
 
 WORKDIR /usr/share/nginx/html/
 
