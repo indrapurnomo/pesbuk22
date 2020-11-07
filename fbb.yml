@@ -39,12 +39,12 @@ spec:
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
-                  name: p-secret-fb
+                  name: mysecret
                   key: user
             - name: DB_PASS
               valueFrom:
                 secretKeyRef:
-                  name: p-secret-fb
+                  name: mysecret
                   key: password
             - name: DB_NAME
               value:"dbsosmed2"
