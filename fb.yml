@@ -36,7 +36,7 @@ spec:
         ports:
         - containerPort: 80
         env:
-            - name: DB_HOST
+            - name: DB_HOST                                                                                                                               
               value:"production.cge3wy8cu4rk.us-east-2.rds.amazonaws.com"
             - name: DB_USER
               valueFrom:
