@@ -56,12 +56,12 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: pesbuk-ingress
-  namespace: production
+  #namespace: production
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: pesbuk.indraku.online
+  - host: pesbuktrial.indraku.online
     http:
       paths:
       #- path: /
