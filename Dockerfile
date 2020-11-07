@@ -4,12 +4,8 @@
 
 #WORKDIR /var/www/html/
 
-FROM php:7.2-fpm
+FROM indradock/pesbuk 
 
 WORKDIR /usr/share/nginx/html/
-
-RUN apt-get update -y \
-    && apt-get install -y nginx \
-    && docker-php-ext-install mysqli pdo pdo_mysql 
 
 COPY . .
