@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: pesbuk-ku
-        image: indradock/pesbuk-app
+        image: indradock/pesbuk-app:versi
         ports:
         - containerPort: 80
         env:
