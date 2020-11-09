@@ -31,7 +31,7 @@ spec:
         track: stable
     spec:
       containers:
-      - name: pesbuk-app
+      - name: pesbuk-ku
         image: indradock/pesbuk-app
         ports:
         - containerPort: 80
