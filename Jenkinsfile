@@ -25,7 +25,7 @@ pipeline {
            }
         stage('set domain') {
             steps {
-                sh('sed -i "s/pesbuk.indraku.online/pesbukstaging.indraku.online/g" blog.yml')
+                sh('sed -i "s/pesbuk.indraku.online/pesbukstaging.indraku.online/g" pesbuk.yml')
                 }
            }
         stage('deploy ke kubernetes') {
