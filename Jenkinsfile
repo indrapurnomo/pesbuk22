@@ -3,7 +3,7 @@ env.DOCKER_IMAGE_NAME = 'pesbuk-app'
 pipeline {
     agent any
     stages {
-        stage('build') {
+        stage('version') {
             steps {
                 sh('sed -i "s/versi/$BUILD_NUMBER/g" index.php')
                 }
@@ -25,12 +25,12 @@ pipeline {
            }
         stage('change namespace') {
             steps {
-                sh('sed -i "s/default/production/g" pesbuk.yml')
+                sh('sed -i "s/default/staging/g" pesbuk.yml')
                 }
            }
         stage('set domain') {
             steps {
-                sh('sed -i "s/pesbuk.indraku.online/pesbuk.indraku.online/g" pesbuk.yml')
+                sh('sed -i "s/pesbuk.indraku.online/pesbukstaging.indraku.online/g" pesbuk.yml')
                 }
            }
         stage('deploy ke kubernetes') {
@@ -45,7 +45,7 @@ pipeline {
            }
          stage('show ingress') {
             steps {
-                sh('kubectl get ingress -n=production')
+                sh('kubectl get ingress -n=staging')
                 }
            }        
       }
