@@ -41,7 +41,7 @@ pipeline {
            }
          stage('show ingress') {
             steps {
-                sh('kubectl get ingress -n=pesbuk')
+                sh('kubectl get ingress -n=production')
                 }
            }        
       }
