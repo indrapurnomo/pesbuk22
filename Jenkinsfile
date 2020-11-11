@@ -3,9 +3,13 @@ env.DOCKER_IMAGE_NAME = 'pesbuk-app'
 pipeline {
     agent any
     stages {
-        stage('docker build image') {
+        stage('build') {
             steps {
                 sh('sed -i "s/versi/$BUILD_NUMBER/g" index.php')
+                }
+            }
+        stage('docker build image') {
+            steps { 
                 sh "docker build --build-arg APP_NAME=$DOCKER_IMAGE_NAME -t $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:$BUILD_NUMBER ."
                 }
            }
