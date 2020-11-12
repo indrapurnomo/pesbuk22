@@ -3,7 +3,7 @@ env.DOCKER_IMAGE_NAME = 'pesbuk-app'
 pipeline {
     agent any
     stages {
-        stage('version') {
+        stage('versi') {
             steps {
                 sh('sed -i "s/versi/$BUILD_NUMBER/g" index.php')
                 }
